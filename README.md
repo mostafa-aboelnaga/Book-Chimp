@@ -1,5 +1,5 @@
 # Book Chimp
- A web app built using the `Node.js`, `MongoDB`, ` EJS Template MVC` for a university project.
+ A web app built using the `Node.js`, `Express`, `MongoDB`, and ` EJS Template MVC` for a university project.
 
 
 # ![Book Chimp](demo/overallLook.jpg)
