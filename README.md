@@ -6,6 +6,19 @@
 
 <br>
 
+## 🔴 **Live Demo**
+<br>
+
+### You can check the website live [here](https://bookchimp-v1.herokuapp.com/home)
+
+
+<br>
+
+
+---
+
+<br>
+
 ## 😎 **Quick start**
 
 <br>
@@ -31,7 +44,7 @@ That's all you need to know to start! ✅
 <br>
 <br>
   
-##  **Built with**
+## ⚒️ **Built with**
 
 <br>
 
@@ -48,7 +61,7 @@ That's all you need to know to start! ✅
 <br>
 
 
-## [License](https://github.com/mostafa-aboelnaga/Book-Chimp/blob/main/LICENSE)
+## 🚩 [License](https://github.com/mostafa-aboelnaga/Book-Chimp/blob/main/LICENSE)
 
 MIT © [Mostafa Aboelnaga](https://github.com/mostafa-aboelnaga/)
 
