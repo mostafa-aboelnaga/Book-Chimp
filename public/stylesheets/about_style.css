@@ -1,0 +1,9 @@
+section .about-names {
+  margin: 250px auto;
+  text-align: center;
+}
+
+section h3 {
+  margin: 20px auto;
+  color: #00467e;
+}

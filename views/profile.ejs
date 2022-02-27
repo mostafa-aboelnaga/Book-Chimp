@@ -1,0 +1,178 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheets/upload_style.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" href="./images/shape_logo_bookchimp.svg" />
+    <title>BookChimp - A Jungle Full of Books</title>
+  </head>
+  <body>
+    <div class="nav-container fixed-top">
+      <nav class="nav">
+        <div class="logo_text">
+          <a href="./home"
+            ><img src="./images/text_logo_bookchimp.svg" alt=""
+          /></a>
+        </div>
+        <div class="logo_shape">
+          <a href="./home"
+            ><img src="./images/shape_logo_bookchimp.svg" alt=""
+          /></a>
+        </div>
+        <ul class="tabs">
+          <li><a href="./about">About</a></li>
+          <li>
+            <form id="logout-form" method="post" action="../api/user/logout">
+              <input type="hidden" name="name" value="value" />
+              <a
+                href="javascript:"
+                onclick="document.getElementById('logout-form').submit();"
+                >Logout</a
+              >
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="upload-div">
+      <form
+        class="form-upload"
+        action="/api/user/upload"
+        method="post"
+        name="upload-form"
+      >
+        <h3 class="h3 mb-3 font-weight-normal">Upload Your Newest Book!</h3>
+
+        <label for="title" class="sr-only">Title</label>
+        <input
+          autocomplete="off"
+          type="text"
+          class="form-control"
+          placeholder="Title"
+          name="title"
+        />
+
+        <label for="desc" class="sr-only">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Description"
+          name="desc"
+        />
+
+        <label for="link" class="sr-only">Link</label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Link"
+          name="link"
+        />
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+          Upload
+        </button>
+      </form>
+    </div>
+
+    <div class="my-uploads">
+      <div class="container section-title">
+        <h4>My Books</h4>
+      </div>
+
+      <div class="books-container">
+        <% userBooks.forEach((book)=>{ %>
+        <div class="card book-item bg-dark text-white">
+          <img class="card-img" src="<%= book.link %>" alt="Card image" />
+          <a href="javascript:;" onclick="editAllowed = true">
+            <div class="card-img-overlay">
+              <h5 class="card-title"><%= book.title %></h5>
+              <p class="card-text"><%= book.desc %></p>
+            </div>
+          </a>
+        </div>
+        <% }) %>
+      </div>
+
+      <div class="update-div">
+        <form
+          class="form-upload"
+          action="/api/user/update"
+          method="post"
+          name="update-form"
+        >
+          <h3 class="h3 mb-3 font-weight-normal">Edit a book</h3>
+
+          <label for="oldTitle" class="sr-only">Old Title</label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="form-control"
+            placeholder="Old Title"
+            name="oldTitle"
+          />
+
+          <label for="title" class="sr-only">New Title</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="New Title"
+            name="title"
+          />
+
+          <label for="desc" class="sr-only">New Description</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="New Description"
+            name="desc"
+          />
+
+          <label for="link" class="sr-only">New Link</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="New Link"
+            name="link"
+          />
+
+          <button class="btn btn-lg btn-dark btn-block" type="submit">
+            Update
+          </button>
+        </form>
+        <br />
+        <br />
+        <form
+          class="form-upload"
+          action="/api/user/delete"
+          method="post"
+          name="delete-form"
+        >
+          <h3 class="h3 mb-3 font-weight-normal">Delete a book</h3>
+
+          <label for="oldTitle" class="sr-only">Title</label>
+          <input
+            autocomplete="off"
+            type="text"
+            class="form-control"
+            placeholder="Title"
+            name="title"
+          />
+
+          <button class="btn btn-lg btn-danger btn-block" type="submit">
+            Delete
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

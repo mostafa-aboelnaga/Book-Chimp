@@ -1,0 +1,64 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link rel="stylesheet" href="./stylesheets/about_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" href="./images/shape_logo_bookchimp.svg" />
+    <title>About BookChimp</title>
+  </head>
+  <body>
+    <div class="nav-container fixed-top">
+      <nav class="nav">
+        <div class="logo_text">
+          <a href="./home"
+            ><img src="./images/text_logo_bookchimp.svg" alt=""
+          /></a>
+        </div>
+        <div class="logo_shape">
+          <a href="./home"
+            ><img src="./images/shape_logo_bookchimp.svg" alt=""
+          /></a>
+        </div>
+        <ul class="tabs">
+          <% if(userid != null){ %>
+          <li><a href="./profile">My Profile</a></li>
+          <li>
+            <form id="logout-form" method="post" action="../api/user/logout">
+              <input type="hidden" name="name" value="value" />
+              <a
+                href="javascript:;"
+                onclick="document.getElementById('logout-form').submit();"
+                >Logout</a
+              >
+            </form>
+          </li>
+          <% } else { %>
+          <li><a href="./login">Login</a></li>
+          <li><a href="./Register">Register</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+
+    <section>
+      <div class="container about-names">
+        <h1>Participants</h1>
+        <br />
+        <h3>Mostafa Elsayed Mohamed Reda Abo El-naga</h3>
+        <h3>Mostafa Mohamed Ragab Mohamed Abdellatif</h3>
+        <h3>Moaaz Abdelsalam Ibrahim Kassem</h3>
+        <h3>Mostafa Ahmed Mohamed Mohamed Khalifa</h3>
+        <h3>Rawan Elwy Ali Hamed Hussein</h3>
+      </div>
+    </section>
+  </body>
+</html>

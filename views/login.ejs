@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./stylesheets/login_style.css" />
+    <link rel="stylesheet" href="./stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="icon" href="./images/shape_logo_bookchimp.svg" />
+    <title>Login - BookChimp</title>
+  </head>
+  <body>
+    <div class="nav-container fixed-top">
+      <nav class="nav">
+        <div class="logo_text">
+          <a href="./home"
+            ><img src="./images/text_logo_bookchimp.svg" alt=""
+          /></a>
+        </div>
+        <div class="logo_shape">
+          <a href="./home"
+            ><img src="./images/shape_logo_bookchimp.svg" alt=""
+          /></a>
+        </div>
+        <ul class="tabs">
+          <li><a href="./about">About</a></li>
+          <li><a href="./register">Register</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <form
+      class="form-signin"
+      action="../api/user/login"
+      method="post"
+      name="login-form"
+    >
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+      <label for="username" class="sr-only">Email</label>
+      <input
+        autocomplete="off"
+        type="text"
+        class="form-control"
+        placeholder="Email"
+        name="email"
+      />
+
+      <label for="password" class="sr-only">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        name="password"
+      />
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Sign in
+      </button>
+    </form>
+
+    <% if (error == "true"){ %>
+    <div
+      class="container alert alert-danger"
+      style="
+        max-width: 350px;
+        text-align: center;
+        font-weight: 500;
+        text-transform: capitalize;
+      "
+      role="alert"
+    >
+      <%= errorMessage %>
+    </div>
+    <% } %>
+
+    <div class="container" style="text-align: center">
+      Not a Member?
+      <a href="./register">Register Now!</a>
+    </div>
+  </body>
+</html>
